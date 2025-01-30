@@ -52,7 +52,7 @@ meme_reviews = [
 
 @bot.event
 async def on_message(message):
-    if message.author == bot:
+    if message.author == bot.user:
         return
     
     print(f"{message.author} in '{message.channel.guild}':", message.content)
