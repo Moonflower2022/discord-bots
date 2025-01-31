@@ -90,7 +90,7 @@ async def on_message(message):
         await handle_chains(message, bot)
 
     if message.author != bot.user:
-        if str(message.channel.guild) == "ars" and random.random() < 0.2:
+        if str(message.channel.guild) == "ars" and "a" in message.content and random.random() < 0.2:
             await message.reply(ars("translated: " + message.content), mention_author=True)
         if "ars" in message.content:
             await message.reply(highlight_ars(message.content), mention_author=True)
