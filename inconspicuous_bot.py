@@ -1,10 +1,12 @@
+#!/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
+
 import random
 from utils import get_regional_indicator_emoji, temp_message
 from datetime import timedelta
-from base import bot, on_ready
+from base import bot
 from voice import speak, leave, play
 from count import count, count_emojis, plot
-from chains import created_chain, broke_chain, attempt_timeout
+from chains_bot import created_chain, broke_chain, attempt_timeout
 import re
 
 # def ars(string):
@@ -35,6 +37,10 @@ def highlight_ars(string):
     for i in range(len(parts)):
         parts[i] = parts[i].replace("ars", "ars" if i % 2 else "*ars*")
     return "*".join(parts).replace("**", "")
+
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user.name}")
 
 @bot.command()
 async def arsify(ctx, *, string):
@@ -77,10 +83,10 @@ async def on_message(message):
         for letter in list(word):
             await message.add_reaction(get_regional_indicator_emoji(letter))
 
-    white_list = ["Goozy Twozy Electric Boogaloozy", "Baked Beans on Toast"]
+    black_list = ["Goozy Twozy Electric Boogaloozy", "Baked Beans on Toast"]
 
     if (
-        not str(message.channel.guild) in white_list 
+        not str(message.channel.guild) in black_list 
         and (
             not str(message.channel.guild) == "jj" 
             or str(message.channel) == "bot-testing"
@@ -92,8 +98,8 @@ async def on_message(message):
     if message.author != bot.user:
         if str(message.channel.guild) == "ars" and "a" in message.content and random.random() < 0.2:
             await message.reply(ars("translated: " + message.content), mention_author=True)
-        if "ars" in message.content:
-            await message.reply(highlight_ars(message.content), mention_author=True)
+        if "ars" in message.content and "ars" != message.content:
+            await message.reply("no wya did you just say " + highlight_ars(message.content), mention_author=True)
 
     await bot.process_commands(message)
 

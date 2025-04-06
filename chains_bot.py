@@ -1,13 +1,9 @@
 # Import the required modules
+from base import bot
 import discord
 from discord.ext.commands import Bot
 import asyncio
 from utils import get_regional_indicator_emoji
-
-# Create a Discord bot instance and set the command prefix
-intents = discord.Intents.all()
-bot = Bot(command_prefix=".", intents=intents)
-
 
 # Set the confirmation message when the bot is ready
 @bot.event
@@ -46,10 +42,11 @@ async def attempt_timeout(user, duration, reason):
     except:
         print(f"something went wrong when timeouting '{user}' for reason '{reason}'")
 
-from dotenv import load_dotenv
-import os
+if __name__ == "__main__":
+    from dotenv import load_dotenv
+    import os
 
-load_dotenv()
-TOKEN = os.getenv("INCONSPICUOUS_TOKEN")
+    load_dotenv()
+    TOKEN = os.getenv("INCONSPICUOUS_TOKEN")
 
-bot.run(TOKEN)
+    bot.run(TOKEN)

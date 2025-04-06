@@ -1,3 +1,5 @@
+#!/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
+
 from base import bot, on_ready
 import re
 import random
