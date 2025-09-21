@@ -1,13 +1,18 @@
 #!/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
 
-import random
 from utils import get_regional_indicator_emoji, temp_message
-from datetime import timedelta
 from base import bot
 from voice import speak, leave, play
 from count import count, count_emojis, plot
 from chains_bot import created_chain, broke_chain, attempt_timeout
+
+from datetime import timedelta
+import random
 import re
+import setproctitle
+import time
+
+setproctitle.setproctitle("inconspicuous_bot")
 
 # def ars(string):
 #     new_string = ""
@@ -109,5 +114,6 @@ import os
 load_dotenv()
 TOKEN = os.getenv("INCONSPICUOUS_TOKEN")
 
+time.sleep(20)
 # Retrieve token from the .env file
 bot.run(TOKEN)
