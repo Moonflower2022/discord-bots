@@ -3,6 +3,10 @@
 from base import bot, on_ready
 import re
 import random
+import setproctitle
+import time
+
+setproctitle.setproctitle("memer_bot")
 
 meme_reviews = [
     "This meme cleverly plays with current events and is quite relatable. I appreciate the creativity behind it. 8/10",
@@ -57,6 +61,9 @@ async def on_message(message):
     if message.author == bot.user:
         return
     
+    if "modern" in message.content or "Modern" in message.content:
+        await message.reply("modern :fire:", mention_author=True)
+    
     print(f"{message.author} in '{message.channel.guild}':", message.content)
 
     daily_meme_pattern = r"^[Dd]aily [Mm]eme.*$"
@@ -70,5 +77,7 @@ import os
 
 load_dotenv()
 TOKEN = os.getenv("MEMER_TOKEN")
+
+time.sleep(20)
 
 bot.run(TOKEN)
