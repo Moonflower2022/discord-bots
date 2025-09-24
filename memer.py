@@ -60,6 +60,9 @@ meme_reviews = [
 async def on_message(message):
     if message.author == bot.user:
         return
+
+    if message.channel != "memes":
+        return
     
     if "modern" in message.content or "Modern" in message.content:
         await message.reply("modern :fire:", mention_author=True)
