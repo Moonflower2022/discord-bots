@@ -1,0 +1,25 @@
+{
+  "signups": [
+    776510460170076200,
+    864254747556970496,
+    1297739861649920053
+  ],
+  "user_details": {
+    "776510460170076200": {
+      "username": "perpetualyt",
+      "display_name": "Perpetual",
+      "global_name": "Perpetual"
+    },
+    "864254747556970496": {
+      "username": "leviathan_its_monday",
+      "display_name": "BlobTheBuilder",
+      "global_name": "BlobTheBuilder"
+    },
+    "1297739861649920053": {
+      "username": "astronomicalflower",
+      "display_name": "astronomicalflower",
+      "global_name": "astronomicalflower"
+    }
+  },
+  "last_updated": "2025-09-28T11:18:29.172205"
+}

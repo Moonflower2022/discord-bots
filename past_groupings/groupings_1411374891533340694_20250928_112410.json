@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-09-28T11:24:10.911728",
+  "guild_id": 1411374891533340694,
+  "groupings": [
+    [
+      1297739861649920053,
+      864254747556970496,
+      776510460170076200
+    ]
+  ],
+  "user_details": {
+    "1297739861649920053": {
+      "username": "astronomicalflower",
+      "display_name": "astronomicalflower",
+      "global_name": "astronomicalflower"
+    },
+    "864254747556970496": {
+      "username": "leviathan_its_monday",
+      "display_name": "BlobTheBuilder",
+      "global_name": "BlobTheBuilder"
+    },
+    "776510460170076200": {
+      "username": "perpetualyt",
+      "display_name": "Perpetual",
+      "global_name": "Perpetual"
+    }
+  },
+  "total_participants": 3
+}
