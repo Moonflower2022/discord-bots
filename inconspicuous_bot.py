@@ -79,7 +79,7 @@ async def handle_chains(message, bot):
 
 @bot.event
 async def on_message(message):
-    print(f"{message.author} in '{message.channel.guild}':", message.content)
+    print(f"{message.author} in #{message.channel.name} in {message.channel.guild}:", message.content)
 
     sra_chance = 0.1
 

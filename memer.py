@@ -67,7 +67,7 @@ async def on_message(message):
     if "modern" in message.content or "Modern" in message.content:
         await message.reply("modern :fire:", mention_author=True)
     
-    print(f"{message.author} in '{message.channel.guild}':", message.content)
+    print(f"{message.author} in #{message.channel.name} in {message.channel.guild}:", message.content)
 
     daily_meme_pattern = r"^[Dd]aily [Mm]eme.*$"
     if re.match(daily_meme_pattern, str(message.content)):

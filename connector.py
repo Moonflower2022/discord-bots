@@ -182,7 +182,7 @@ def get_next_grouping_time():
 
 @bot.event
 async def on_message(message):
-    print(f"{message.author} in '{message.channel.guild}':", message.content)
+    print(f"{message.author} in #{message.channel.name} in {message.channel.guild}:", message.content)
     await bot.process_commands(message)
 
 @bot.command(name='signup_1on1')
