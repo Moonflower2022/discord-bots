@@ -113,7 +113,5 @@ import os
 
 load_dotenv()
 TOKEN = os.getenv("INCONSPICUOUS_TOKEN")
-
-time.sleep(60)
 # Retrieve token from the .env file
 bot.run(TOKEN)

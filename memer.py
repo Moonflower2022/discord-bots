@@ -81,6 +81,5 @@ import os
 load_dotenv()
 TOKEN = os.getenv("MEMER_TOKEN")
 
-time.sleep(60)
 
 bot.run(TOKEN)
