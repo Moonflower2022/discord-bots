@@ -181,6 +181,19 @@ def get_next_grouping_time():
     return next_grouping
 
 @bot.event
+async def on_member_join(member):
+    print(f"member {member.name} joined {member.guild.name}")
+
+    for channel in member.guild.text_channels:
+        if channel.name.lower() in ['general', 'main', 'chat']:
+            welcome_channel = channel
+            break
+
+    await welcome_channel.send(f"{member.mention}, welcome! make sure to have fun while connecting")
+        
+
+
+@bot.event
 async def on_message(message):
     print(f"{message.author} in #{message.channel.name} in {message.channel.guild}:", message.content)
     await bot.process_commands(message)
